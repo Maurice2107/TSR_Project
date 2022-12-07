@@ -1,5 +1,9 @@
 package edu.example.shaderoom.models;
 
+import com.google.cloud.firestore.annotation.DocumentId;
+
+import java.util.Date;
+
 public abstract class BaseChats {
     @DocumentId
     protected String objectId;

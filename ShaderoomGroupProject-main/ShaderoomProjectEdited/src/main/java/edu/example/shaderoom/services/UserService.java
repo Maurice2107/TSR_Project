@@ -1,18 +1,32 @@
 package edu.example.shaderoom.services;
 
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.*;
+import com.google.firebase.cloud.FirestoreClient;
+
+import edu.example.shaderoom.models.Chats;
+import edu.example.shaderoom.models.User;
+
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 @Service
 public class UserService {
 
-    public List<Chats> getChatsByUserId(String objectId) throws ExecutionEception, INterruptedException {
+    public List<Chats> getChatsByUserId(String objectId) throws ExecutionException, InterruptedException {
 
         //printing out chats to the screen
-        List<Chats> chats = new Arraylist<>();
+        List<Chats> chats = new ArrayList<>();
 
         //database connection object
         Firestore db = FirestoreClient.getFirestore();
 
         //retrieves a reference to the document(row) of the collection (table) with a specific id
-        DocumentReference userRef = db.collection("User").document(id);
+        DocumentReference userRef = db.collection("User").document(objectId);
 
         //ApiFuture allows us to make async calls to the database
         ApiFuture<DocumentSnapshot> future = userRef.get();
@@ -31,7 +45,6 @@ public class UserService {
             chats.add(new Chats(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"),user)
             );
         }
-
         return chats;
 
 

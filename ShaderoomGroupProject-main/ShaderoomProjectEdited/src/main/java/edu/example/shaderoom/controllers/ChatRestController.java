@@ -1,14 +1,21 @@
 package edu.example.shaderoom.controllers;
 
 
+import edu.example.shaderoom.models.Comments;
+import edu.example.shaderoom.models.RestChats;
+import edu.example.shaderoom.services.ChatService;
+import org.attoparser.dom.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMApping("/api/chats")
+@RequestMapping ("/api/chats")
 public class ChatRestController {
 
-    public ChatsService chatService;
+    public ChatService chatService;
 
     @Autowired
     public ChatRestController(ChatService chatService)
@@ -17,12 +24,12 @@ public class ChatRestController {
     }
 
     @GetMapping("/{id}")
-    public Chat getChatById(@PathVariable(name="id") String id) throws ExecutionException, InterruptedExecution {
+    public List<Comments> getChatById(@PathVariable(name="id") String id) throws ExecutionException, InterruptedException {
         return chatService.getChatsComments(id);
     }
 
-    @ChatMapping(path = "/")
-    public String createChat(@RequestBody RestChats chats) throws EcecutionException, InterruptedException {
-        return chatService.createChat(chats);
+    @GetMapping("/")
+    public String createChat(@RequestBody RestChats chats) throws ExecutionException, InterruptedException {
+        return chatService.createPost(chats);
     }
 }

@@ -1,9 +1,24 @@
 package edu.example.shaderoom.services;
 
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.*;
+import com.google.firebase.cloud.FirestoreClient;
+
+import edu.example.shaderoom.models.Chats;
+import edu.example.shaderoom.models.Comments;
+import edu.example.shaderoom.models.RestChats;
+import edu.example.shaderoom.models.User;
+
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 @Service
 public class ChatService {
 
-    public Chats getChatsById(String objectId)throws ExcecutionException, InterruptedException{
+    public Chats getChatsById(String objectId)throws ExecutionException, InterruptedException{
         Chats chats =null;
 
         //database connection object
@@ -23,7 +38,7 @@ public class ChatService {
             UserService service = new UserService();
             DocumentReference userRef = (DocumentReference) document.get("author");
             ApiFuture<DocumentSnapshot> userQuery = userRef.get();
-            SocumentSnapshot userDoc = userQuery.get();
+            DocumentSnapshot userDoc = userQuery.get();
             User user = userDoc.toObject(User.class);
 
             chats = new Chats(document.getId(),document.getString("title"), document.getString("content"), document.getDate("createdAt"),user);
@@ -33,13 +48,13 @@ public class ChatService {
 
     }
 
-    public List<Comment> getChatsComments(String id)throws ExecutionException, InterruptedException{
+    public List<Comments> getChatsComments(String id)throws ExecutionException, InterruptedException{
 
         Chats chats = getChatsById(id);
 
         if(chats != null)
         {
-            List<Comment> comments = new ArrayList<>();
+            List<Comments> comments = new ArrayList<>();
             //database connection object
             Firestore db = FirestoreClient.getFirestore();
 
@@ -47,7 +62,7 @@ public class ChatService {
             DocumentReference postRef = db.collection("Chats").document(id);
 
             //Query for post by post
-            Query commentQuery = db.collectionGroup("Comment").whereEqualTo("Chats", chatsRef);
+            Query commentQuery = db.collectionGroup("Comment").whereEqualTo("Chats", chats);
             ApiFuture<QuerySnapshot> querySnapshot = commentQuery.get();
 
             //loop over results and create Comment objects
@@ -66,11 +81,15 @@ public class ChatService {
                 else
                 {
                     author = new User();
-                    author.setUsername("unknown");
+                    author.setUserName("unknown");
                 }
-
+                DocumentReference chatRef = (DocumentReference) document.get("chat");
+                ApiFuture<DocumentSnapshot> future2 = chatRef.get();
+                //Retrieve document
+                DocumentSnapshot chatDoc = future2.get();
                 //add the comment to the list
-                comments.add(new Comment(document.getId(), document.getString("content"), document.getNumber("likeCount"),document.getDate("createdAt"), author, post));
+                Chats chat = chatDoc.toObject(Chats.class);
+                comments.add(new Comments(document.getId(),(int)document.get("likeCount"), document.getString("content"),document.getDate("createdAt"), author, chat));
             }
 
             return comments;
@@ -78,7 +97,7 @@ public class ChatService {
         return null;
     }
 
-    public String createPost(RestPost post) throws ExecutionException, InterruptedException{
+    public String createPost(RestChats chats) throws ExecutionException, InterruptedException{
         //database connection object
         Firestore db = FirestoreClient.getFirestore();
         ApiFuture<DocumentReference> chatsRef = db.collection("Chats").add(chats);

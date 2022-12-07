@@ -1,5 +1,11 @@
 package edu.example.shaderoom.models;
 
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.Firestore;
+import com.google.firebase.cloud.FirestoreClient;
+
+import java.util.Date;
+
 public class RestComments extends BaseComments{
 
     private DocumentReference author;

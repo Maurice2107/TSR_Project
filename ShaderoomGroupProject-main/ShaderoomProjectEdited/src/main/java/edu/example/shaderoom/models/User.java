@@ -1,5 +1,9 @@
 package edu.example.shaderoom.models;
 
+import com.google.cloud.firestore.annotation.DocumentId;
+
+import java.io.File;
+
 public class User {
     @DocumentId
     private String id;
