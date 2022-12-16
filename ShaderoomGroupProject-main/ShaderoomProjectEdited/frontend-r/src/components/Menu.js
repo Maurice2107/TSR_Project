@@ -15,9 +15,9 @@ function Menu(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item"><Link className="nav-link" to="/menu">Menu</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/cart">Cart</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/profile">My Profile</Link></li>
+                         <li className="nav-item"><Link className="nav-link" to="/menu">HOME</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/cart">CHAT</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/profile">ACCOUNT SETTING</Link></li>
                     </ul>
                 </div>
             </div>
