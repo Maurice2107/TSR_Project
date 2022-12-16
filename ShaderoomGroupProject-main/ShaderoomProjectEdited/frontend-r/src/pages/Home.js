@@ -33,16 +33,60 @@ function Home(props) {
 
                                 <div className="col g-4" >
                                     <div className="card"  >
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" />
+
                                         <div className="card-body">
-                                            <p className="card-text">hello</p>
-                                                <h6 className="title" style={{textAlign:"center", margin: "20px"}}> My
-                                                    Title
-                                                </h6>
+                                            <a href="https://www.cnbc.com">
+                                                <img src="https://thumbs.dreamstime.com/b/political-news-gold-d-words-dark-digital-background-41801097.jpg" className="card-img-top" />
+                                            </a>
+                                            <p>
+                                                <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                            </p>
 
                                         </div>
                                     </div>
                                 </div>
+                    <div className="col g-4" >
+                        <div className="card"  >
+
+                            <div className="card-body">
+                                <a href="https://www.etonline.com/news">
+                                    <img src="https://deadline.com/wp-content/uploads/2019/08/e-news-logo-featured.jpg" className="card-img-top" />
+                                </a>
+                                <p>
+                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col g-4" >
+                        <div className="card"  >
+
+                            <div className="card-body">
+                                <a href="https://timesofindia.indiatimes.com/world">
+                                    <img src="https://thumbs.dreamstime.com/b/international-news-red-bubble-background-isolated-143222466.jpg" className="card-img-top" />
+                                </a>
+                                <p>
+                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col g-4" >
+                        <div className="card"  >
+
+                            <div className="card-body">
+                                <a href="https://www.usnews.com/news/health-news">
+                                    <img src="https://previews.123rf.com/images/iqoncept/iqoncept1705/iqoncept170500109/78287404-health-news-headlines-newspaper-information-3d-illustration.jpg" className="card-img-top" />
+                                </a>
+                                <p>
+                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
