@@ -31,7 +31,7 @@ function CategoryMenu(props) {
         <>
             <Menu />
             <div className="container">
-                <h2 className="display-2">{name}</h2>
+                <h2 className="display-2">CHAT</h2>
                 <div className="row row-cols-lg-3 row-cols-sm-2">
                     {
                         items.map((item)=>{
@@ -39,7 +39,9 @@ function CategoryMenu(props) {
                         })
                     }
                 </div>
+
             </div>
+
         </>
     );
 }
