@@ -27,6 +27,7 @@ function Home(props) {
         <>
             <Menu/>
             <div className="container">
+                <h2 className="display-2">Select a Headline</h2>
                 <div className="row row-cols-lg-4 row-cols-sm-2">
 
 

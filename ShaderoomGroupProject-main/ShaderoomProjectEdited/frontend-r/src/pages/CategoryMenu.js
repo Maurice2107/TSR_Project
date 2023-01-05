@@ -31,7 +31,7 @@ function CategoryMenu(props) {
         <>
             <Menu />
             <div className="container">
-                <h2 className="display-2">CHAT</h2>
+                <h2 className="display-2">Chat Room</h2>
                 <div className="row row-cols-lg-3 row-cols-sm-2">
                     {
                         items.map((item)=>{
@@ -40,7 +40,34 @@ function CategoryMenu(props) {
                     }
                 </div>
 
-            </div>
+                <div className="container">
+                    <img src="https://media.licdn.com/dms/image/C5603AQELg9mdtS6HUw/profile-displayphoto-shrink_800_800/0/1663702118178?e=1677110400&v=beta&t=GNt_fFKSR-hOAdF4mRqP2FuYUuqNaJyo6qOoHFc0kEQ" alt="Avatar"/>
+                        <p>Hello. How are you today? Have you caught up with today's headlines?</p>
+                        <span className="time-right">11:00</span>
+                </div>
+
+                <div className="container darker">
+                    <img src="https://media.licdn.com/dms/image/C5603AQEJcPSt9FntFQ/profile-displayphoto-shrink_800_800/0/1655087567162?e=2147483647&v=beta&t=9vrGQTLilEX-Af-hWXzSl6d5gg28pLau8fzwSwqm2jk" alt="Avatar" className="right"/>
+                        <p>Hey! I'm fine. Thanks for asking, and Yes I have. These topics sure are very intriduging!</p>
+                        <span className="time-left">11:01</span>
+                </div>
+
+                <div className="container">
+                    <img src="https://media.licdn.com/dms/image/C5603AQELg9mdtS6HUw/profile-displayphoto-shrink_800_800/0/1663702118178?e=1677110400&v=beta&t=GNt_fFKSR-hOAdF4mRqP2FuYUuqNaJyo6qOoHFc0kEQ" alt="Avatar"/>
+                        <p>Agreed! So, what's your viewpoint on the entertaiment headlines?</p>
+                        <span className="time-right">11:02</span>
+                </div>
+
+                <div className="container darker">
+                    <img src="https://media.licdn.com/dms/image/C5603AQEJcPSt9FntFQ/profile-displayphoto-shrink_800_800/0/1655087567162?e=2147483647&v=beta&t=9vrGQTLilEX-Af-hWXzSl6d5gg28pLau8fzwSwqm2jk" alt="Avatar" className="right"/>
+                        <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+                        <span className="time-left">11:05</span>
+                </div>
+
+
+
+                     </div>
+
 
         </>
     );
