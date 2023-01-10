@@ -27,20 +27,20 @@ body.chat .container {
 }
 
 /* Darker chat container */
-body.chat .darker {
+.chat .darker {
   border-color: #ccc;
   background-color: #ddd;
 }
 
 /* Clear floats */
-body.chat. container::after {
+.chat. container::after {
   content: "";
   clear: both;
   display: table;
 }
 
 /* Style images */
-body.chat. container img {
+.chat >.container img {
   float: left;
   max-width: 60px;
   width: 100%;
@@ -49,20 +49,28 @@ body.chat. container img {
 }
 
 /* Style the right image */
-body.chat. container img.right {
+.chat >.container img.right {
   float: right;
   margin-left: 20px;
   margin-right:0;
 }
 
 /* Style time text */
-body.chat.time-right {
+.chat .time-right {
   float: right;
   color: #aaa;
 }
 
 /* Style time text */
-body.chat.time-left {
+.chat.time-left {
   float: left;
   color: #999;
+}
+.category > img {
+  width:250px;
+  display:inline-block;
+  height:150px;
+  margin-right:10px;
+  padding:0;
+
 }

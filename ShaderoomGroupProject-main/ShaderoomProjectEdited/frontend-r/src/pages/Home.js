@@ -10,18 +10,8 @@ function Home(props) {
     let firebaseResponse = localStorage.getItem("firebaseResponse");
     firebaseResponse = (firebaseResponse ? JSON.parse(firebaseResponse): "");
 
-    useEffect(()=>{
+    useEffect(()=> {
         $("body").removeClass("login");
-        let headers = {"Authorization": "Bearer " + firebaseResponse.token}
-        /*axios.get("http://localhost:8080/api/category/",{headers: headers})
-            .then((response) =>{
-                // console.log(response);
-                setCategories(response.data);
-            })
-            .catch((err)=>{
-                console.log(err);
-
-            })*/
     },[])
     return (
         <>
@@ -36,11 +26,11 @@ function Home(props) {
                                     <div className="card"  >
 
                                         <div className="card-body">
-                                            <a href="https://www.cnbc.com">
-                                                <img src="https://thumbs.dreamstime.com/b/political-news-gold-d-words-dark-digital-background-41801097.jpg" className="card-img-top" />
-                                            </a>
+                                            <Link to="/category/business">
+                                                <img src="https://hbr.org/resources/images/article_assets/2022/08/Hero-Image.png" className="card-img-top" />
+                                            </Link>
                                             <p>
-                                                <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                                <Link className="nav-link" to="/chat">Business Chat</Link>
                                             </p>
 
                                         </div>
@@ -50,11 +40,11 @@ function Home(props) {
                         <div className="card"  >
 
                             <div className="card-body">
-                                <a href="https://www.etonline.com/news">
-                                    <img src="https://deadline.com/wp-content/uploads/2019/08/e-news-logo-featured.jpg" className="card-img-top" />
-                                </a>
+                                <Link to="/category/entertainment">
+                                    <img src="https://d5zukw8vdn04n.cloudfront.net/wp-content/uploads/2020/10/shutterstock_1149399851.jpg" className="card-img-top" />
+                                </Link>
                                 <p>
-                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                    <Link className="nav-link" to="/chat">Entertainment Chat</Link>
                                 </p>
 
                             </div>
@@ -64,11 +54,11 @@ function Home(props) {
                         <div className="card"  >
 
                             <div className="card-body">
-                                <a href="https://timesofindia.indiatimes.com/world">
-                                    <img src="https://thumbs.dreamstime.com/b/international-news-red-bubble-background-isolated-143222466.jpg" className="card-img-top" />
-                                </a>
+                                <Link to="/category/sports">
+                                    <img src="https://media.springernature.com/w580h326/nature-cms/uploads/collections/Hero_image_1200x675_pixels_2-5273134ecbb5c94f78bbc87366502385.jpg" className="card-img-top" />
+                                </Link>
                                 <p>
-                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                    <Link className="nav-link" to="/chat">Sports Chat</Link>
                                 </p>
 
                             </div>
@@ -78,11 +68,11 @@ function Home(props) {
                         <div className="card"  >
 
                             <div className="card-body">
-                                <a href="https://www.usnews.com/news/health-news">
-                                    <img src="https://previews.123rf.com/images/iqoncept/iqoncept1705/iqoncept170500109/78287404-health-news-headlines-newspaper-information-3d-illustration.jpg" className="card-img-top" />
-                                </a>
+                                <Link to="/category/technology">
+                                    <img src="https://www.state.gov/wp-content/uploads/2019/04/Science-Technology-shutterstock_449187505.jpg" className="card-img-top" />
+                                </Link>
                                 <p>
-                                    <Link className="nav-link" to="/chat">CLICK HERE TO CHAT</Link>
+                                    <Link className="nav-link" to="/chat">Technology Chat</Link>
                                 </p>
 
                             </div>

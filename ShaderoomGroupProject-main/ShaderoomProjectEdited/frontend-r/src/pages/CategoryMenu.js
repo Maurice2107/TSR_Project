@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import MenuCard from "../components/MenuCard";
+import "../App.css";
 
 function CategoryMenu(props) {
 
@@ -39,7 +40,7 @@ function CategoryMenu(props) {
                         })
                     }
                 </div>
-
+                <div className="chat">
                 <div className="container">
                     <img src="https://media.licdn.com/dms/image/C5603AQELg9mdtS6HUw/profile-displayphoto-shrink_800_800/0/1663702118178?e=1677110400&v=beta&t=GNt_fFKSR-hOAdF4mRqP2FuYUuqNaJyo6qOoHFc0kEQ" alt="Avatar"/>
                         <p>Hello. How are you today? Have you caught up with today's headlines?</p>
@@ -60,13 +61,22 @@ function CategoryMenu(props) {
 
                 <div className="container darker">
                     <img src="https://media.licdn.com/dms/image/C5603AQEJcPSt9FntFQ/profile-displayphoto-shrink_800_800/0/1655087567162?e=2147483647&v=beta&t=9vrGQTLilEX-Af-hWXzSl6d5gg28pLau8fzwSwqm2jk" alt="Avatar" className="right"/>
-                        <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+                        <p>There's so many differet articles that my viewpoints are elsewhere!</p>
                         <span className="time-left">11:05</span>
+                    <br/>
+                </div>
+                    <hr/>
+                    <form action="/chat">
+                    <textarea rows="4" cols="50" maxLength="50"> Type your reponse...</textarea>
+                    </form>
+                    <br/>
+                    <button type="button">Send</button>
+                    </div>
+
                 </div>
 
 
 
-                     </div>
 
 
         </>
