@@ -29,6 +29,7 @@ function Home(props) {
                                             <Link to="/category/business">
                                                 <img src="https://hbr.org/resources/images/article_assets/2022/08/Hero-Image.png" className="card-img-top" />
                                             </Link>
+                                            <hr/>
                                             <p>
                                                 <Link className="nav-link" to="/chat">Business Chat</Link>
                                             </p>
@@ -43,6 +44,7 @@ function Home(props) {
                                 <Link to="/category/entertainment">
                                     <img src="https://d5zukw8vdn04n.cloudfront.net/wp-content/uploads/2020/10/shutterstock_1149399851.jpg" className="card-img-top" />
                                 </Link>
+                                <hr/>
                                 <p>
                                     <Link className="nav-link" to="/chat">Entertainment Chat</Link>
                                 </p>
@@ -57,6 +59,7 @@ function Home(props) {
                                 <Link to="/category/sports">
                                     <img src="https://media.springernature.com/w580h326/nature-cms/uploads/collections/Hero_image_1200x675_pixels_2-5273134ecbb5c94f78bbc87366502385.jpg" className="card-img-top" />
                                 </Link>
+                                <hr/>
                                 <p>
                                     <Link className="nav-link" to="/chat">Sports Chat</Link>
                                 </p>
@@ -71,6 +74,7 @@ function Home(props) {
                                 <Link to="/category/technology">
                                     <img src="https://www.state.gov/wp-content/uploads/2019/04/Science-Technology-shutterstock_449187505.jpg" className="card-img-top" />
                                 </Link>
+                                <hr/>
                                 <p>
                                     <Link className="nav-link" to="/chat">Technology Chat</Link>
                                 </p>
