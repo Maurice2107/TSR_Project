@@ -2,21 +2,22 @@ package edu.example.shaderoom.models;
 
 import java.util.Date;
 
-public class Chats extends BaseChats
+public class Chat extends BaseChat
 {
     private User author;
 
-    public Chats()
+    public Chat()
     {
 
     }
 
-    public Chats(String objectId, String title, String content, Date createdAt, User author)
+    public Chat(String objectId, String title, String content, Date createdAt, User author, String topic)
     {
         this.objectId = objectId;
         this.title = title;
         this.content = content;
         this.createdAt = createdAt;
+        this.topic = topic;
         this.author = author;
 
     }

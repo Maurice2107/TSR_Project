@@ -2,17 +2,17 @@ package edu.example.shaderoom.models;
 
 import java.util.Date;
 
-public class Comments extends BaseComments{
+public class Comment extends BaseComment {
 
     private User author;
-    private Chats chats;
+    private Chat chats;
 
-    public Comments()
+    public Comment()
     {
 
     }
 
-    public Comments(String objectId, Number likeCount, String content, Date createdAt, User author, Chats chats)
+    public Comment(String objectId, Number likeCount, String content, Date createdAt, User author, Chat chats)
     {
         this.objectId = objectId;
         this.likeCount = likeCount;

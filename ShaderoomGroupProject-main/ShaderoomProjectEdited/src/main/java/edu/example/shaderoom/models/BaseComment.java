@@ -4,7 +4,7 @@ import com.google.cloud.firestore.annotation.DocumentId;
 
 import java.util.Date;
 
-public abstract class BaseComments
+public abstract class BaseComment
 {
     @DocumentId
     protected String objectId;

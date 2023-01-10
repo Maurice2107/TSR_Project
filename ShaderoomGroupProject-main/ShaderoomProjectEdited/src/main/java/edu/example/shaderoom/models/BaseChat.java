@@ -4,11 +4,12 @@ import com.google.cloud.firestore.annotation.DocumentId;
 
 import java.util.Date;
 
-public abstract class BaseChats {
+public abstract class BaseChat {
     @DocumentId
     protected String objectId;
     protected String title;
     protected String content;
+    protected String topic;
     protected Date createdAt;
 
     public String getObjectId() {
@@ -42,4 +43,13 @@ public abstract class BaseChats {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
 }

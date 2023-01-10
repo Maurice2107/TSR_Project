@@ -4,7 +4,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 
-import edu.example.shaderoom.models.Chats;
+import edu.example.shaderoom.models.Chat;
 import edu.example.shaderoom.models.User;
 
 import org.springframework.stereotype.Service;
@@ -17,10 +17,10 @@ import java.util.concurrent.ExecutionException;
 @Service
 public class UserService {
 
-    public List<Chats> getChatsByUserId(String objectId) throws ExecutionException, InterruptedException {
+    public List<Chat> getChatsByUserId(String objectId) throws ExecutionException, InterruptedException {
 
         //printing out chats to the screen
-        List<Chats> chats = new ArrayList<>();
+        List<Chat> chats = new ArrayList<>();
 
         //database connection object
         Firestore db = FirestoreClient.getFirestore();
@@ -42,7 +42,7 @@ public class UserService {
         //loop over results and creat chat objects
         for(DocumentSnapshot document : querySnapshot.get().getDocuments())
         {
-            chats.add(new Chats(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"),user)
+            chats.add(new Chat(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"),user)
             );
         }
         return chats;

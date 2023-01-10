@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
-            <Route path="/chat" element={<PrivateRoute><CategoryMenu /></PrivateRoute>} />
+            <Route path="/chat/:topic" element={<PrivateRoute><CategoryMenu /></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
             <Route path="/login" exact element={<SignIn/>}/>
               <Route path="/category/:catergoryname" element={<PrivateRoute><Catergory/></PrivateRoute>} />

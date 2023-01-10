@@ -6,7 +6,7 @@ import com.google.firebase.cloud.FirestoreClient;
 
 import java.util.Date;
 
-public class RestComments extends BaseComments{
+public class RestComments extends BaseComment{
 
     private DocumentReference author;
 

@@ -1,6 +1,6 @@
 package edu.example.shaderoom.controllers;
 
-import edu.example.shaderoom.models.Chats;
+import edu.example.shaderoom.models.Chat;
 import edu.example.shaderoom.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class UserRestController {
     }
 
     @GetMapping("/{id}/chats")
-    public List<Chats> getChatsByUserId(@PathVariable (name="id") String id) throws ExecutionException, InterruptedException
+    public List<Chat> getChatsByUserId(@PathVariable (name="id") String id) throws ExecutionException, InterruptedException
     {
         return userService.getChatsByUserId(id);
     }

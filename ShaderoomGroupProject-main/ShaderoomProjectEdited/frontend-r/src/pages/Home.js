@@ -31,7 +31,7 @@ function Home(props) {
                                             </Link>
                                             <hr/>
                                             <p>
-                                                <Link className="nav-link" to="/chat">Business Chat</Link>
+                                                <Link className="nav-link" to="/chat/business">Business Chat</Link>
                                             </p>
 
                                         </div>
@@ -46,7 +46,7 @@ function Home(props) {
                                 </Link>
                                 <hr/>
                                 <p>
-                                    <Link className="nav-link" to="/chat">Entertainment Chat</Link>
+                                    <Link className="nav-link" to="/chat/entertainment">Entertainment Chat</Link>
                                 </p>
 
                             </div>
@@ -61,7 +61,7 @@ function Home(props) {
                                 </Link>
                                 <hr/>
                                 <p>
-                                    <Link className="nav-link" to="/chat">Sports Chat</Link>
+                                    <Link className="nav-link" to="/chat/sports">Sports Chat</Link>
                                 </p>
 
                             </div>
@@ -76,7 +76,7 @@ function Home(props) {
                                 </Link>
                                 <hr/>
                                 <p>
-                                    <Link className="nav-link" to="/chat">Technology Chat</Link>
+                                    <Link className="nav-link" to="/chat/technology">Technology Chat</Link>
                                 </p>
 
                             </div>

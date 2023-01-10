@@ -6,7 +6,7 @@ import com.google.firebase.cloud.FirestoreClient;
 
 import java.util.Date;
 
-public class RestChats extends BaseChats{
+public class RestChats extends BaseChat{
 
     private DocumentReference author;
 
