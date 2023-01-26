@@ -1,4 +1,6 @@
-package edu.example.shaderoom.auth.services;
+package edu.example.shaderoom.services;
+
+
 import edu.example.shaderoom.auth.models.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,8 +1,9 @@
-package edu.example.shaderoom.auth.services;
+package edu.example.shaderoom.auth;
 
 
 
 import com.google.api.core.ApiFuture;
+
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.Query;
@@ -12,15 +13,17 @@ import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
 import com.google.firebase.cloud.FirestoreClient;
 
-import edu.example.shaderoom.auth.models.Credentials;
-import edu.example.shaderoom.auth.models.FirebaseUser;
 import edu.example.shaderoom.auth.models.SecurityProperties;
+import edu.example.shaderoom.auth.models.FirebaseUser;
+import edu.example.shaderoom.auth.services.SecurityService;
 import edu.example.shaderoom.models.User;
+import edu.example.shaderoom.services.CookieUtils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.example.shaderoom.auth.models.Credentials;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;

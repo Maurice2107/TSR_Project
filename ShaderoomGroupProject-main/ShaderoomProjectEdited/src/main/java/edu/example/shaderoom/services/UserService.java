@@ -42,7 +42,7 @@ public class UserService {
         //loop over results and creat chat objects
         for(DocumentSnapshot document : querySnapshot.get().getDocuments())
         {
-            chats.add(new Chat(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"),user)
+            chats.add(new Chat(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"),user, document.getString("topic"))
             );
         }
         return chats;

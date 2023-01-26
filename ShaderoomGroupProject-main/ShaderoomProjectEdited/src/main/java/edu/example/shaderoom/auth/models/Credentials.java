@@ -1,4 +1,5 @@
 package edu.example.shaderoom.auth.models;
+
 import com.google.firebase.auth.FirebaseToken;
 import lombok.AllArgsConstructor;
 import lombok.Data;

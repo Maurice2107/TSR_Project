@@ -41,7 +41,7 @@ public class ChatService {
             DocumentSnapshot userDoc = userQuery.get();
             User user = userDoc.toObject(User.class);
 
-            chats = new Chat(document.getId(),document.getString("title"), document.getString("content"), document.getDate("createdAt"),user);
+            chats = new Chat(document.getId(),document.getString("title"), document.getString("content"), document.getDate("createdAt"),user, document.getString("topic"));
         }
 
         return chats;
@@ -71,7 +71,7 @@ public class ChatService {
                     DocumentSnapshot userDoc = userQuery.get();
                     User user = userDoc.toObject(User.class);
 
-                    chats.add(new Chat(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"), user));
+                    chats.add(new Chat(document.getId(), document.getString("title"), document.getString("content"), document.getDate("createdAt"), user, document.getString("topic")));
                 }
             }
 

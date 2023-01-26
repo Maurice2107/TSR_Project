@@ -1,7 +1,9 @@
 package edu.example.shaderoom.auth.services;
+
 import edu.example.shaderoom.auth.models.Credentials;
 import edu.example.shaderoom.auth.models.FirebaseUser;
 import edu.example.shaderoom.auth.models.SecurityProperties;
+import edu.example.shaderoom.services.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.context.SecurityContext;
