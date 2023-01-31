@@ -75,7 +75,7 @@ export class AuthProvider extends Component {
                         headers: headers,
                         context: document.body
                     }).then((res)=>{
-                        this.state.setCurrentUser(res.data.customer);
+                        this.state.setCurrentUser(res.data.user);
                         localStorage.setItem("user", JSON.stringify(this.state.currentUser));
                     }).catch((err) => {
                         console.log(err);

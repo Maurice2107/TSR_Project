@@ -1,9 +1,13 @@
 package edu.example.shaderoom.controllers;
 
+import edu.example.shaderoom.auth.services.SecurityService;
+import edu.example.shaderoom.models.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Collections;
 
 @Controller
 public class AuthenticationController {
@@ -21,6 +25,10 @@ public class AuthenticationController {
     @GetMapping("/session")
     public ResponseEntity createSession()
     {
-        return new ResponseEntity(HttpStatus.OK);
+        SecurityService securityService = new SecurityService();
+        User user = securityService.getUser().getUser();
+
+        //return the customer object in JSON format
+        return ResponseEntity.ok(Collections.singletonMap("user", user));
     }
 }
