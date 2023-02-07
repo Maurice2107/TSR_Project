@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Collections;
 
@@ -22,7 +23,7 @@ public class AuthenticationController {
     /**
      * Used to create the session. Does not retun a template like most controllers
      */
-    @GetMapping("/session")
+    @PostMapping("/session")
     public ResponseEntity createSession()
     {
         SecurityService securityService = new SecurityService();

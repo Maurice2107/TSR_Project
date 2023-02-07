@@ -14,11 +14,13 @@ public class User {
     private String password;
     private File image;
 
+    private String uid;
+
     public User()
     {
 
     }
-    public User(String id,String userName, String firstName,String lastName,String email,String password, File image){
+    public User(String id,String userName, String firstName,String lastName,String email,String password, File image, String uid){
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
@@ -26,6 +28,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.image = image;
+        this.uid = uid;
     }
 
     public String getId() {
@@ -83,4 +86,8 @@ public class User {
     public void setImage(File image) {
         this.image = image;
     }
+
+    public String getUid(){return uid;}
+
+    public void setUid(String uid) { this.uid = uid;}
 }

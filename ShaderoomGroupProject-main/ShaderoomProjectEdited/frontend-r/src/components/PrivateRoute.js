@@ -4,12 +4,13 @@ import {Navigate} from "react-router-dom";
 
 function PrivateRoute({children})
 {
-    const {currentUser} = useContext(AuthContext);
-console.log(currentUser)
+    const {currentUser, setCurrentUser} = useContext(AuthContext);
+    if(currentUser.length == 0 && localStorage.getItem("user") != null)
+        setCurrentUser(localStorage.getItem("user"))
     if(currentUser != null && currentUser.length > 0 )
         localStorage.setItem("user", JSON.stringify(currentUser));
 
-    return currentUser && currentUser.length > 0 ? children : <Navigate to="/login" replace={true} />
+    return currentUser ? children : <Navigate to="/home" replace={true} />
 
 }
 export default PrivateRoute;

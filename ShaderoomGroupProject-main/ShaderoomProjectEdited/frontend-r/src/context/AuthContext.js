@@ -71,11 +71,13 @@ export class AuthProvider extends Component {
                     localStorage.setItem("firebaseResponse", JSON.stringify(res));
                     let headers = {"Authorization": "Bearer " + token}
 
-                    await axios.post ("http://localhost:8080/auth/session", document.body, {
+                    await axios.post ("http://localhost:8080/session", document.body, {
                         headers: headers,
                         context: document.body
                     }).then((res)=>{
+
                         this.state.setCurrentUser(res.data.user);
+
                         localStorage.setItem("user", JSON.stringify(this.state.currentUser));
                     }).catch((err) => {
                         console.log(err);
